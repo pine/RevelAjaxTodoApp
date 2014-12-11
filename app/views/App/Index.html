@@ -1,0 +1,68 @@
+{{set . "title" "Home"}}
+{{append . "moreScripts" "js/index.js"}}
+{{append . "moreStyles" "css/index.css"}}
+{{template "header.html" .}}
+
+<div class="container">
+  <header>
+    <h1 class="text-center">Todo</h1>
+  </header>
+  
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <form action="javascript: void 0" method="post" class="form-horizontal input" role="form" v-on="submit: add">
+        <div class="form-group">
+          <label class="col-xs-3 control-label">TODO: </label>
+          <div class="col-xs-9">
+            <input type="text" id="todo-text" value="" class="form-control" placeholder="Content" v-model="text" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary pull-right">ADD</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="col-xs-6 col-xs-offset-3">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Content</th>
+            <th>Posted At</th>
+            <th width="150">Delete</th>
+          </tr>
+        </thead>
+        
+        <tfoot>
+          <tr>
+            <td colspan="3">
+            </td>
+            <td>
+              <button class="btn btn-warning" v-on="click: removeAll">DELETE ALL</button>
+            </td>
+          </tr>
+        </tfoot>
+        
+        <tbody>
+          <tr v-repeat="todos">
+            <td>{{`{{$index+1}}`}}</td>
+            <td>{{`{{Text}}`}}</td>
+            <td>{{`{{PostedAt |date}}`}}</td>
+            <td>
+              <button class="btn btn-default" v-on="click: remove($index)">DELETE</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <footer>
+    <p class="text-center"><small>Todo apps</small></p>
+  </footer>
+</div>
+
+{{template "footer.html" .}}

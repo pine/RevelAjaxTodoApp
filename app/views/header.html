@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>{{.title}}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/vue/0.11.4/vue.min.js"></script>
+    {{range .moreStyles}}
+      <link rel="stylesheet" type="text/css" href="/public/{{.}}">
+    {{end}}
+    {{range .moreScripts}}
+      <script src="/public/{{.}}" type="text/javascript" charset="utf-8"></script>
+    {{end}}
+  </head>
+  <body>
