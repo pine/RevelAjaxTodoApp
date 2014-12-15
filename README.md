@@ -3,6 +3,8 @@ Todo App
 
 This is a simple todo app that is used [Golang](https://golang.org) and [Revel Framework](http://revel.github.io).
 
+![スクリーンショット](screenshot.png)
+
 ## Usage
 
 ```
