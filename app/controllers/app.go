@@ -16,13 +16,6 @@ type Todo struct {
 var todos []Todo
 
 func init() {
-  revel.TemplateFuncs["succ"] = func(a int) int { return a + 1 }
-  revel.TemplateFuncs["date"] = func(t time.Time) string {
-    const layout = "2006/01/02 15:04"
-    jst := time.FixedZone("Asia/Tokyo", 9*60*60)
-    
-    return t.In(jst).Format(layout)
-  }
 }
 
 func (c App) Index() revel.Result {

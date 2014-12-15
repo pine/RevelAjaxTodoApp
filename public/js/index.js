@@ -8,7 +8,7 @@ $(function() {
     },
     methods: {
       load: function () {
-        console.log('load', this.text);
+        console.log('load');
         
         $.get('/list', function(data) {
           if (data && data.Status === 'succeeded') {
